@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Age Calculator | Modern Glass UI</title>
+  <meta name="description" content="Live online Age Calculator: calculate exact age with birth date, time & timezone; birthday countdown, milestones, mobile-first, AdSense-ready." />
+  <link rel="canonical" href="https://example.com/age-calculator" />
+  <meta property="og:title" content="Age Calculator" />
+  <meta property="og:description" content="Calculate your exact age in years, months, days, seconds. Next birthday countdown and milestone reminders with calendar export." />
+  <meta property="og:url" content="https://example.com/age-calculator" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Age Calculator",
+    "operatingSystem": "Web",
+    "applicationCategory": "Calculator",
+    "offers": { "@type": "Offer", "price": "0" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    { "question": "How is age calculated?", "acceptedAnswer": { "text": "Using birth date, time, and timezone for accurate age in years, months, days, and seconds." } },
+    { "question": "Can I export milestones to my calendar?", "acceptedAnswer": { "text": "Yes, download .ics files for milestone reminders." } },
+    { "question": "Is it accurate for leap year birthdays?", "acceptedAnswer": { "text": "Yes, with proper handling of Feb 29 birthdays." } },
+    { "question": "Is my age live up-to-date?", "acceptedAnswer": { "text": "Yes, age and countdown update every second live." } },
+    { "question": "How do I switch language?", "acceptedAnswer": { "text": "Use the language toggle buttons at the top to switch between English and Tamil." } }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="glass-card header-card" role="banner">
+    <div class="lang-toggle" aria-label="Language toggle">
+      <button id="lang-en" class="active" type="button" aria-pressed="true">English</button>
+      <button id="lang-ta" type="button" aria-pressed="false">தமிழ் 🇮🇳</button>
+    </div>
+    <h1 id="main-title">Age Calculator</h1>
+    <p id="subtitle">Find your exact age live with your birth date, time, and time zone</p>
+  </header>
+  <!-- AdSense Slot 1 -->
+  <div class="ad-slot" aria-label="Ad slot (header)">
+    <!-- Paste your AdSense code here -->
+  </div>
+
+  <main id="main" class="glass-card main-card" role="main">
+    <form id="age-form" autocomplete="off" aria-labelledby="form-title">
+      <h2 id="form-title">Your Birth Details</h2>
+      <label for="dob" id="label-dob">Date of Birth <span aria-hidden="true">*</span></label>
+      <input id="dob" type="date" required aria-required="true" autocomplete="bday" />
+      
+      <label for="tob" id="label-tob">Time of Birth (optional):</label>
+      <input id="tob" type="time" autocomplete="bday-time" />
+      
+      <label for="timezone" id="label-timezone">Timezone:</label>
+      <select id="timezone" name="timezone"></select>
+      <button type="button" id="tz-refresh">Auto-set browser timezone</button>
+      
+      <button type="submit" id="calc-btn">Calculate</button>
+      <div id="error-msg" aria-live="polite" class="error"></div>
+    </form>
+
+    <!-- Results Grid -->
+    <section id="results-grid" class="results-grid" aria-live="polite" aria-atomic="true" tabindex="0"></section>
+    <!-- Next Birthday Pill -->
+    <section id="next-bd-pill" class="next-bd-pill" aria-live="polite"></section>
+    <!-- Milestones -->
+    <section id="milestones-card" class="milestones-card"></section>
+
+    <!-- AdSense Slot 2 -->
+    <div class="ad-slot" aria-label="Ad slot (results)">
+      <!-- Paste your AdSense code here -->
+    </div>
+
+    <!-- FAQ Accordion -->
+    <section id="faq-accordion" class="faq-accordion" aria-labelledby="faq-title">
+      <h2 id="faq-title">FAQ (Frequently Asked Questions)</h2>
+      <div class="faq-list"></div>
+    </section>
+
+    <!-- Internal Links Block -->
+    <nav id="internal-links-block" class="internal-links-block" aria-label="Internal navigation">
+      <ul>
+        <li><a href="#main-title">Age Calculator</a></li>
+        <li><a href="#next-bd-pill">Next Birthday</a></li>
+        <li><a href="#milestones-card">Milestones</a></li>
+        <li><a href="#faq-title">FAQ</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <!-- Dark mode toggle -->
+  <button id="dark-toggle" aria-label="Dark mode toggle">🌙</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
